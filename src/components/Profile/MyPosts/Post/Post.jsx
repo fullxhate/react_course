@@ -9,10 +9,10 @@ const Post = (props) => {
       {/*{ props.name }*/}
 
       <div>
-          <span>like</span>
+          <span>like</span> {props.like}
       </div>
 
-      {props.like}
+
 
             </div>
 }

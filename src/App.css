@@ -8,8 +8,11 @@
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
 }
-a {
-  color: inherit;
+
+.app-wrapper__content{
+  grid-area: content;
+  background-color: aquamarine;
+
 }
 
 
