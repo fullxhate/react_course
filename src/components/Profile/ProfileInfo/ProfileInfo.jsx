@@ -6,10 +6,10 @@ const ProfileInfo = () => {
     return  <div >
         <div>
             <img
-                src="https://s9.travelask.ru/system/images/files/000/336/892/wysiwyg_jpg/10452canada-landscape-map-wallpaper-3.jpg?1502197579"
+                src="https://cdn.shopify.com/s/files/1/1288/8361/files/nintendo_banner.png?%0A%0A4431485819664452509"
                 alt=""/>
         </div>
-        <div className={classes.descriptionblock}>
+        <div className={classes.descriptionBlock}>
             avatar + description
         </div>
 

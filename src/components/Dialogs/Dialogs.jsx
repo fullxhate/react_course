@@ -1,42 +1,44 @@
 import React from "react";
 import classes from './Dialogs.module.css'
-import {NavLink} from "react-router-dom";
-
-const DialogItem = (props) => {
-    return <div className={classes.dialog + ' ' + classes.active}>
-        <NavLink to={"/dialogs/" + props.id}>
-            {props.name}
-        </NavLink>
-    </div>
-}
-const Message = (props) => {
-    return <div className={classes.dialog}>
-        {props.message}
-    </div>
-}
+import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
 const Dialogs = (props) => {
+    let dialogs = [
+        {id: 1, name: 'Andrew'},
+        {id: 2, name: 'Kriss'},
+        {id: 3, name: 'Alex'},
+        {id: 4, name: 'Sergey'},
+        {id: 5, name: 'Anna'},
+        {id: 6, name: 'Vasilii'},
+    ]
+    let messages = [
+        {id: 1, message: 'Hi!'},
+        {id: 2, message: 'Hello!'},
+        {id: 3, message: 'Salamaliqkum'},
+        {id: 4, message: 'Hi!'},
+        {id: 5, message: 'Hello!'},
+        {id: 6, message: 'Salamaliqkum'},
+
+    ]
+
+    let dialogsElements = dialogs
+        .map( dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
+
+
+    let messagesElements = messages.map( message => <Message message={message.message} />);
+
     return <div className={classes.dialogs}>
         <div className={classes.dialogsItems}>
-            <DialogItem name="Andrew" id="1"/>
-            <DialogItem name="Kriss" id="2"/>
-            <DialogItem name="Alex" id="3"/>
-            <DialogItem name="Sergey" id="4"/>
-            <DialogItem name="Anna" id="5"/>
-            <DialogItem name="Vasilii" id="6"/>
+            {dialogsElements}
         </div>
         <div className={classes.messages}>
-            <Message message="Hi!"/>
-            <Message message="Hello!"/>
-            <Message message="Salamaliqkum"/>
-            <Message message="Hi!"/>
-            <Message message="Hello!"/>
-            <Message message="Salamaliqkum"/>
-
+            {messagesElements}
         </div>
 
 
     </div>
+
 }
 export default Dialogs;
 
